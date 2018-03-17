@@ -232,6 +232,129 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/17/hexo-d出错及通过SSH远端认证到Github问题-md/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoying17">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoying17的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/17/hexo-d出错及通过SSH远端认证到Github问题-md/" itemprop="url">hexo d出错及通过SSH远端认证到Github问题.md</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T13:17:45+08:00">
+                2018-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>一次hexo d时出现以下问题<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">fatal: HttpRequestException encountered.</span><br><span class="line">   ▒▒▒▒▒▒▒▒ʱ▒▒▒▒</span><br><span class="line">bash: /dev/tty: No such device or address</span><br><span class="line">error: failed to execute prompt script (<span class="built_in">exit</span> code 1)</span><br><span class="line">fatal: could not <span class="built_in">read</span> Username <span class="keyword">for</span> <span class="string">'https://github.com'</span>: No error</span><br><span class="line">FATAL Something<span class="string">'s wrong. Maybe you can find the solution here: http://hexo.io/docs/troubleshooting.html</span></span><br><span class="line"><span class="string">Error: fatal: HttpRequestException encountered.</span></span><br><span class="line"><span class="string">   ��������ʱ����</span></span><br><span class="line"><span class="string">bash: /dev/tty: No such device or address</span></span><br><span class="line"><span class="string">error: failed to execute prompt script (exit code 1)</span></span><br><span class="line"><span class="string">fatal: could not read Username for '</span>https://github.com<span class="string">': No error</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    at ChildProcess.&lt;anonymous&gt; (C:\Users\xiaoying17\Documents\myDemo\hexo\myBlog\node_modules\hexo-util\lib\spawn.js:37:17)</span></span><br><span class="line"><span class="string">    at emitTwo (events.js:126:13)</span></span><br><span class="line"><span class="string">    at ChildProcess.emit (events.js:214:7)</span></span><br><span class="line"><span class="string">    at ChildProcess.cp.emit (C:\Users\xiaoying17\Documents\myDemo\hexo\myBlog\node_modules\cross-spawn\lib\enoent.js:40:29)</span></span><br><span class="line"><span class="string">    at maybeClose (internal/child_process.js:925:16)</span></span><br><span class="line"><span class="string">    at Process.ChildProcess._handle.onexit (internal/child_process.js:209:5)</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="检查已有的SSH密钥"><a href="#检查已有的SSH密钥" class="headerlink" title="检查已有的SSH密钥"></a>检查已有的SSH密钥</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1. 打开Git Bash.</span><br><span class="line">2. 输入ls -al ~/.ssh检查是否存在SSH密钥</span><br><span class="line">3. 本机结果如下:</span><br><span class="line">   total 25</span><br><span class="line">   drwxr-xr-x 1 xiaoying17 197121    0 11月 23 20:00 ./</span><br><span class="line">   drwxr-xr-x 1 xiaoying17 197121    0 3月  16 00:10 ../</span><br><span class="line">   -rw-r--r-- 1 xiaoying17 197121 1675 1月  12 19:28 id_rsa</span><br><span class="line">   -rw-r--r-- 1 xiaoying17 197121  408 1月  12 19:28 id_rsa.pub</span><br><span class="line">   -rw-r--r-- 1 xiaoying17 197121 1199 3月  15 22:28 known_hosts</span><br></pre></td></tr></table></figure>
+<p>以上确认本机存在公有和私有密钥id_rsa.pub、id_rsa，可以用来连接到Github。</p>
+<h4 id="用SSH密钥连接到SSH代理商"><a href="#用SSH密钥连接到SSH代理商" class="headerlink" title="用SSH密钥连接到SSH代理商"></a>用SSH密钥连接到SSH代理商</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1. 确认ssh-agent在运行</span><br><span class="line">   在命令行中输入 <span class="built_in">eval</span> $(ssh-agent -s)，</span><br><span class="line">   结果:Agent pid 7580</span><br><span class="line">   说明ssh-agent在运行。</span><br><span class="line">2. 添加SSH私钥到ssh-agent。</span><br><span class="line">   命令为:$ ssh-add ~/.ssh/id_rsa</span><br><span class="line">   结果: Identity added: /c/Users/xiaoying17/.ssh/id_rsa (/c/Users/xiaoying17/.ssh/id_rsa)</span><br><span class="line">3. 添加SSH key到GitHub账号。</span><br></pre></td></tr></table></figure>
+<h4 id="添加SSH-key到GitHub账号"><a href="#添加SSH-key到GitHub账号" class="headerlink" title="添加SSH key到GitHub账号"></a>添加SSH key到GitHub账号</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. $ clip &lt; ~/.ssh/id_rsa.pub复制SSH key到粘贴板上</span><br><span class="line">2. 登录GitHub账户，点击到Setting界面</span><br><span class="line">3. New SSH key和Add SSH key</span><br><span class="line">4. 操作完成，需要确认一下账号密码</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/09/http笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1375,134 +1498,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/14/Game-of-life遇到的坑/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoying17">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoying17的路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/14/Game-of-life遇到的坑/" itemprop="url">Game of life遇到的坑</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-14T14:48:01+08:00">
-                2018-01-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="403-Forbidden"><a href="#403-Forbidden" class="headerlink" title="403 Forbidden"></a>403 Forbidden</h4><p>nginx</p>
-<p>  403 Forbidden是Http协议中的一个状态码，表示没有权限访问此战，服务器收到请求但拒绝提供服务。nginx(发音同engine x)是一个Web服务器。这个错误是试图在codepen上添加react-bootstrap的src时出现的。<br>  而下拉菜单本可以用react-bootstrap中的DropdownButton等组件，在本地可以使用，而在codepen上不能使用。查阅资料，不建议在react的DOM中直接使用bootstrap。</p>
-<h4 id="获得四分之一的概率"><a href="#获得四分之一的概率" class="headerlink" title="获得四分之一的概率"></a>获得四分之一的概率</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Math.floor(Math.random() * 4)=== 1</span><br></pre></td></tr></table></figure>
-<p>Math.floor()为向下取整，Math.random()产生(0,1)的随机浮点数，范围在[0.25,0.5)之间的随机数都满足上式；可以用来在游戏中随机选取总点数的四分之一。</p>
-<h4 id="复制数组"><a href="#复制数组" class="headerlink" title="复制数组"></a>复制数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function arrayClone(arr) &#123;</span><br><span class="line">	return JSON.parse(JSON.stringify(arr));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>涉及到深拷贝与浅拷贝 JS patterns 133页<br>js的数据类型为基本类型Number String Boolean与引用类型Object Array<br>深浅拷贝针对引用类型<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">浅拷贝</span><br><span class="line">function extend(parent, child)&#123;</span><br><span class="line">	var i;</span><br><span class="line">	child = child || &#123;&#125;;</span><br><span class="line">	for(i in parent) &#123;</span><br><span class="line">		if (parent.hasOwnProperty(i)) &#123;</span><br><span class="line">			child[i] = parent[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return child;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>深拷贝会看每项property是否为对象，如果是对象，会进一步循环。这样的结果，parent与child为两个不同的对象，改变其中一个的属性不会影响另一个。而浅拷贝会parent与child指向同一片内存地址。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">深拷贝</span><br><span class="line">function extendDeep(parent, child) &#123;</span><br><span class="line">	var i,</span><br><span class="line">		toStr = Object.prototype.toString,</span><br><span class="line">		astr = &quot;[object Array]&quot;;</span><br><span class="line"></span><br><span class="line">		child = child || &#123;&#125;; //若没有child这一项，将生成一个object</span><br><span class="line"></span><br><span class="line">		for(i in parent) &#123;</span><br><span class="line">			if (parent.hasOwnProperty(i))&#123;</span><br><span class="line">				if(typeof parent[i] === &quot;object&quot;) &#123;</span><br><span class="line">						child[i] = (toStr.call(parent[i] === astr) ? [] : &#123;&#125;;</span><br><span class="line">						extendDeep(parent[i], child[i]);</span><br><span class="line">					&#125; else &#123;</span><br><span class="line">						child[i] = parent[i];</span><br><span class="line">					&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return child;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="判断数组方法之一"><a href="#判断数组方法之一" class="headerlink" title="判断数组方法之一"></a>判断数组方法之一</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ECMAScript 5 Array.isArray()</span><br><span class="line"></span><br><span class="line">Array.isArray([]); //true</span><br><span class="line"></span><br><span class="line">if (typeof Array.isArray === &quot;undefined&quot;)&#123;</span><br><span class="line">	Array.isArray = function (arg) &#123;</span><br><span class="line">		return Object.prototype.toString.call(arg) === &quot;[object Array]&quot;;</span><br><span class="line">	&#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>对于Object.prototype.toString()方法，数组返回[object Arrray],其余对象返回[object Object]；<br>call()即把以上tostring方法应用到现在的上下文中。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1553,7 +1548,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
