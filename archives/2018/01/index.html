@@ -145,7 +145,7 @@
     
   
 
- 
+
 
   <div class="container sidebar-position-left page-archive">
     <div class="headband"></div>
@@ -950,7 +950,7 @@ class Line {
         if (ua > 0 && ub > 0) {
             ctx.beginPath();
             ctx.arc(x, y, 2.4, 0, 2 * Math.PI); 
-            ctx.fillStyle = 'rgba(164, 164, 164, 0.85)';
+            ctx.fillStyle = 'rgba(164, 164, 164, 0.6)';
             ctx.fill();
         }
     }
@@ -1021,7 +1021,7 @@ let init = function (num) {
     }*/
     draw();
 }
-window.addEventListener('load', init(13));
+window.addEventListener('load', init(12));
 /*window.onmousemove = function (e) {
     e = e || window.event;
     current_line.a.x = e.clientX;
