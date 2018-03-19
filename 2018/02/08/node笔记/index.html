@@ -216,6 +216,7 @@
       <div class="bg_content">
         <canvas id="canvas"></canvas>
       </div>
+
       <div class="main-inner">
         <div class="content-wrap">
           <div id="content" class="content">
@@ -647,5 +648,142 @@
   
 
  
+ <script type="text/javascript">
+
+class Line {
+    //创建对象
+    //以一个圆为对象
+    //设置随机的 x，y坐标，r半径，_mx，_my移动的距离
+    //this.r是创建圆的半径，参数越大半径越大
+    //this._mx,this._my是移动的距离，参数越大移动
+    constructor(flag) {
+        this.flag = flag;
+        this.a = {};
+        this.b = {};
+        
+        if (this.flag == "v") {
+            this.a.y = 0;
+            this.b.y = h;
+            this.a.x = ~~(Math.random() * (h - 0 + 1) + 0);
+            this.b.x = ~~(Math.random() * (h - 0 + 1) + 0);
+        } else if (this.flag == "h") {
+            this.a.x = 0;
+            this.b.x = w;
+            this.a.y = ~~(Math.random() * (w - 0 + 1) + 0);
+            this.b.y = ~~(Math.random() * (w - 0 + 1) + 0);
+        }
+         this._mx = (~~(Math.random() * (100 - 25 + 1) + 25)) / 100;
+        this._my = (~~(Math.random() * (100 - 25 + 1) + 25)) / 100;
+    }
+    
+
+    //canvas 画圆和画直线
+    //画圆就是正常的用canvas画一个圆
+    //画直线是两个圆连线，为了避免直线过多，给圆圈距离设置了一个值，距离很远的圆圈，就不做连线处理
+    drawLine(ctx) {
+        ctx.beginPath();
+        ctx.moveTo(this.a.x, this.a.y);
+        ctx.lineTo(this.b.x, this.b.y);
+        ctx.strokeStyle = 'rgba(204, 204, 204, 0.4)';
+        ctx.stroke();
+    }
+
+    drawPoint(ctx, l1, l2) {
+        let p1 = l1.a,
+            p2 = l1.b,
+            p3 = l2.a,
+             p4 = l2.b;
+        let denominator = (p4.y - p3.y) * (p2.x - p1.x) - (p4.x - p3.x) * (p2.y - p1.y);
+        let ua = ((p4.x - p3.x) * (p1.y - p3.y) - (p4.y - p3.y) * (p1.x - p3.x)) / denominator;
+        let ub = ((p2.x - p1.x) * (p1.y - p3.y) - (p2.y - p1.y) * (p1.x - p3.x)) / denominator;
+        let x = p1.x + ua * (p2.x - p1.x);
+        let y = p1.y + ua * (p2.y - p1.y);
+        if (ua > 0 && ub > 0) {
+            ctx.beginPath();
+            ctx.arc(x, y, 2.4, 0, 2 * Math.PI); 
+            ctx.fillStyle = 'rgba(204, 204, 204, 0.6)';
+            ctx.fill();
+        }
+    }
+
+    // 圆圈移动
+    // 圆圈移动的距离必须在屏幕范围内
+    move(w, h) {
+      
+        if(this.flag == "v") {
+            this._mx = (this.a.x < w && this.a.x > 0) ? this._mx : (-this._mx);
+            this._my = (this.b.x < w && this.b.x > 0) ? this._my : (-this._my);
+            this.a.x += this._mx;
+            this.b.x += this._my;
+        } else if (this.flag == "h") {
+            this._mx = (this.a.y < h && this.a.y > 0) ? this._mx : (-this._mx);
+            this._my = (this.b.y < h && this.b.y > 0) ? this._my : (-this._my);
+            this.a.y += this._mx;
+            this.b.y += this._my;
+        }
+    }
+
+   
+}
+
+
+
+//更新页面用requestAnimationFrame替代setTimeout
+window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+
+let canvas = document.getElementById('canvas');
+let ctx = canvas.getContext('2d');
+let w = canvas.width = canvas.offsetWidth;
+let h = canvas.height = canvas.offsetHeight;
+let lines = [];
+//let requestId = null;
+/*let current_line = new Line("v");*/
+
+let draw = function () {
+   // requestId = window.requestAnimationFrame(draw);
+    ctx.clearRect(0, 0, w, h);
+    for (let i = 0; i < lines.length; i++) {        
+        lines[i].drawLine(ctx);
+        lines[i].move(w, h);
+    }
+
+    for(let i = 0; i < lines.length; i++){
+        for (j = i + 1; j < lines.length; j++) {
+            lines[i].drawPoint(ctx, lines[i], lines[j]);
+        }
+    }
+    /*if (current_line.x) {
+        current_line.drawLine(ctx);
+        for (var k = 1; k < lines.length; k++) {
+            current_line.drawPoint(ctx, current_line, lines[k])
+        }
+    }*/
+    requestAnimationFrame(draw);
+}
+
+let init = function (num) {
+    for (var i = 0; i < num; i++) {
+        let flag = i % 2 == 0 ? "h" : "v";
+        lines.push(new Line(flag));
+    }
+   /* if(requestId) {
+        window.cancelAnimationFree(requestId);
+        requestId = null;
+    }*/
+    draw();
+}
+window.addEventListener('load', init(13));
+/*window.onmousemove = function (e) {
+    e = e || window.event;
+    current_line.a.x = e.clientX;
+    current_line.a.y = e.clientY;
+}
+window.onmouseout = function () {
+    current_line.x = null;
+    current_line.y = null;
+
+};*/
+
+</script>
 </body>
 </html>
