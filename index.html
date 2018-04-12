@@ -236,6 +236,128 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/twitter-heart-animation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoying17">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoying17的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/04/12/twitter-heart-animation/" itemprop="url">twitter点赞效果</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T20:46:39+08:00">
+                2018-04-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天在codepen上看到一个推特点赞的动画，来学习一下。材料需要一张雪碧图，<a href="https://cssanimation.rocks/images/posts/steps/heart.png" target="_blank" rel="noopener">链接在这里</a>。图有29帧。<br>这个动画通过设置transition来改变background-position背景图像的起始位置来实现。当用户点赞时，background-position的值以steps函数阶段性的过渡效果从0变到-2800px，实现<a href="https://codepen.io/xyliu/full/EEJdqg" target="_blank" rel="noopener">动画效果</a>。当用户取消点赞时，background-position位置从-2800px到0，同时加上默认的transition-duration: 0s;达到没有动画的从红心到白心的回退效果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">css如下:</span><br><span class="line">.heart &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background: url(&quot;https://cssanimation.rocks/images/posts/steps/heart.png&quot;) no-repeat;</span><br><span class="line">  background-position: 0 0;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">  transition: background-position 1s steps(28);</span><br><span class="line">  transition-duration: 0s;</span><br><span class="line">&#125; </span><br><span class="line">.is-active &#123;</span><br><span class="line">   transition-duration: 1s;</span><br><span class="line">   background-position: -2800px 0;</span><br><span class="line"> &#125;</span><br><span class="line"> js中监听鼠标事件，添加或删除.is-active类。</span><br></pre></td></tr></table></figure></p>
+<p>对于transition,通过transition-property属性设置过渡效果的css属性名称，以transition-duration规定过渡效果需要的时间定为1s,以transition-timing-function规定速度效果的速度曲线。</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p> translate(x, y)，在2D平面内对元素进行平移，从其当前位置根据给定的left（x坐标）和 top（y坐标）位置参数移动。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/01/深克隆与浅克隆/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -310,8 +432,8 @@
             <h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><p>深克隆与浅克隆针对的是js中的复杂数据类型(Object,Array等)。对象的实例是存储在堆内存中然后通过一个引用值去操作对象，因此有复制引用和复制实例两种情况，极为浅克隆与深克隆的区别。<br>浅克隆是复制引用，复制后的引用都是指向同一个对象的实例，彼此间的操作会互相影响。而深克隆是在堆中重新分配内存，把源对象实例的所有属性都进行新建复制，复制后的对象与原来的对象是完全隔离的。</p>
 <h4 id="浅克隆"><a href="#浅克隆" class="headerlink" title="浅克隆"></a>浅克隆</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//浅克隆函数</span><br><span class="line">function shallowClone(o)&#123;</span><br><span class="line">	const obj = &#123;&#125;;</span><br><span class="line">	for( let i in o )&#123;</span><br><span class="line">		obj[i] = o[i];</span><br><span class="line">	&#125;</span><br><span class="line">	return obj;</span><br><span class="line">&#125;</span><br><span class="line">//被克隆对象</span><br><span class="line">const oldObj = &#123;</span><br><span class="line">	a: 1,</span><br><span class="line">	b: [&apos;e&apos;, &apos;f&apos;, &apos;g&apos;],</span><br><span class="line">	c: &#123;h: &#123;i : 2&#125;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const newObj = shallowClone(oldObj);</span><br><span class="line">console.log(oldObj.c.h === newObj.c.h);  //true</span><br><span class="line"></span><br><span class="line">//newObj与oldObj指向同一段堆内存，对其中一个对象的修改会造成另一个对象同时也会被修改。</span><br></pre></td></tr></table></figure>
 <h4 id="深克隆"><a href="#深克隆" class="headerlink" title="深克隆"></a>深克隆</h4><p>首先，面对不同的对象(正则、数组、Date等)要采用不同的处理方式，以下是一个对象类型判断函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const isType = (obj, type) =&gt; &#123;</span><br><span class="line">	if(typeof obj !== &apos;object&apos;) return false;</span><br><span class="line">	const typeString = Object.prototype.toString.call(obj);</span><br><span class="line">	let flag;</span><br><span class="line">	switch (type) &#123;</span><br><span class="line">		case &apos;Array&apos;:</span><br><span class="line">			flag = typeString === &apos;[object Array]&apos;;</span><br><span class="line">			break;</span><br><span class="line">		case &apos;Date&apos;:</span><br><span class="line">			flag = typeString === &apos;[object Date]&apos;;</span><br><span class="line">			break;</span><br><span class="line">		case &apos;RegExp&apos;:</span><br><span class="line">			flag = typeString === &apos;[object RegExp]&apos;;</span><br><span class="line">			break;</span><br><span class="line">		default:</span><br><span class="line">			flag = false;</span><br><span class="line">	&#125;</span><br><span class="line">	return flag;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>另外，对于正则函数需要实现一个提取flags的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">const getRegExp = re =&gt; &#123;</span><br><span class="line">	var flags = &apos;&apos;;</span><br><span class="line">	if(re.global) flags += &apos;g&apos;;</span><br><span class="line">	if(re.ignoreCase) flags += &apos;i&apos;;</span><br><span class="line">	if(re.multiline) flags += &apos;m&apos;;</span><br><span class="line">	return flags;</span><br><span class="line">&#125;;</span><br><span class="line">最后，是深克隆的实现。</span><br><span class="line">```dash</span><br><span class="line">const clone = parent =&gt; &#123;</span><br><span class="line">	//维护两个储存循环引用的数组</span><br><span class="line">	const parents = [];</span><br><span class="line">	const children = [];</span><br><span class="line"></span><br><span class="line">	const _clone = parent =&gt; &#123;</span><br><span class="line">		if (parent === null) return null;</span><br><span class="line">		if (typeof parent !== &apos;object&apos;) return parent;</span><br><span class="line"></span><br><span class="line">		let child, proto;</span><br><span class="line"></span><br><span class="line">		if(isType(parent, &apos;Array&apos;))&#123;</span><br><span class="line">			//对数组做特殊处理</span><br><span class="line">			child = [];</span><br><span class="line">		&#125;else if(isType(parent, &apos;RegExp&apos;))&#123;</span><br><span class="line">			//对正则对象做特殊处理</span><br><span class="line">			child = new RegExp(parent.source, getRegExp(parent));</span><br><span class="line">			if(parent.lastIndex) child.lastIndex = parent.lastIndex;</span><br><span class="line">		&#125;else if(isType(parent, &apos;Date&apos;))&#123;</span><br><span class="line">			//对Date对象做特殊处理</span><br><span class="line">			child = new Date(parent.getTime());</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			//处理对象原型</span><br><span class="line">			proto = Object.getPrototypeOf(parent);</span><br><span class="line">			//利用Object.create切断原型链</span><br><span class="line">			child = Object.create(proto);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//处理循环引用</span><br><span class="line">		const index = parents.indexOf(parent);</span><br><span class="line"></span><br><span class="line">		if(index != -1) &#123;</span><br><span class="line">			//如果父数组存在本对象，说明之前已经被引用过，直接返回此对象</span><br><span class="line">			return children[index];</span><br><span class="line">		&#125;</span><br><span class="line">		parents.push(parent);</span><br><span class="line">		children.push(parent);</span><br><span class="line"></span><br><span class="line">		for(let i in parent) &#123;</span><br><span class="line">			//递归</span><br><span class="line">			child[i] = _clone(parent[i]);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return child;</span><br><span class="line">	&#125;;</span><br><span class="line">	return _clone(parent);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>```</p>
+<p>另外，对于正则函数需要实现一个提取flags的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const getRegExp = re =&gt; &#123;</span><br><span class="line">	var flags = &apos;&apos;;</span><br><span class="line">	if(re.global) flags += &apos;g&apos;;</span><br><span class="line">	if(re.ignoreCase) flags += &apos;i&apos;;</span><br><span class="line">	if(re.multiline) flags += &apos;m&apos;;</span><br><span class="line">	return flags;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>最后，是深克隆的实现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">const clone = parent =&gt; &#123;</span><br><span class="line">	//维护两个储存循环引用的数组</span><br><span class="line">	const parents = [];</span><br><span class="line">	const children = [];</span><br><span class="line"></span><br><span class="line">	const _clone = parent =&gt; &#123;</span><br><span class="line">		if (parent === null) return null;</span><br><span class="line">		if (typeof parent !== &apos;object&apos;) return parent;</span><br><span class="line"></span><br><span class="line">		let child, proto;</span><br><span class="line"></span><br><span class="line">		if(isType(parent, &apos;Array&apos;))&#123;</span><br><span class="line">			//对数组做特殊处理</span><br><span class="line">			child = [];</span><br><span class="line">		&#125;else if(isType(parent, &apos;RegExp&apos;))&#123;</span><br><span class="line">			//对正则对象做特殊处理</span><br><span class="line">			child = new RegExp(parent.source, getRegExp(parent));</span><br><span class="line">			if(parent.lastIndex) child.lastIndex = parent.lastIndex;</span><br><span class="line">		&#125;else if(isType(parent, &apos;Date&apos;))&#123;</span><br><span class="line">			//对Date对象做特殊处理</span><br><span class="line">			child = new Date(parent.getTime());</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			//处理对象原型</span><br><span class="line">			proto = Object.getPrototypeOf(parent);</span><br><span class="line">			//利用Object.create切断原型链</span><br><span class="line">			child = Object.create(proto);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//处理循环引用</span><br><span class="line">		const index = parents.indexOf(parent);</span><br><span class="line"></span><br><span class="line">		if(index != -1) &#123;</span><br><span class="line">			//如果父数组存在本对象，说明之前已经被引用过，直接返回此对象</span><br><span class="line">			return children[index];</span><br><span class="line">		&#125;</span><br><span class="line">		parents.push(parent);</span><br><span class="line">		children.push(parent);</span><br><span class="line"></span><br><span class="line">		for(let i in parent) &#123;</span><br><span class="line">			//递归</span><br><span class="line">			child[i] = _clone(parent[i]);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return child;</span><br><span class="line">	&#125;;</span><br><span class="line">	return _clone(parent);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -1350,141 +1472,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/22/八大排序/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoying17">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoying17的路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/01/22/八大排序/" itemprop="url">今日份的学习--八大排序</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-22T20:19:06+08:00">
-                2018-01-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var arr = [7, 5, 3, 11, 2, 1];</span><br></pre></td></tr></table></figure>
-<h4 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h4><p>第一轮：从arr[0]开始，两个元素依次相互比较，将最大值冒泡到最后一位;第二轮相互比较的元素从arr[0]至arr[len-1],这一轮的最大值最后到了arr[len-1]处，经过len-1轮排序完成。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function bubbleSort(arr)&#123;</span><br><span class="line">	var len = arr.length,</span><br><span class="line">		temp;</span><br><span class="line">	for(var i = 0; i &lt; len; i++)&#123;</span><br><span class="line">		for(var j = 0; j &lt; len - i - 1; j++)&#123;</span><br><span class="line">			if(arr[j] &gt; arr[j + 1])&#123;</span><br><span class="line">				temp = arr[j];</span><br><span class="line">				arr[j] = arr[j+1];</span><br><span class="line">				arr[j+1] = temp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><p>可以选取数组的中间元素为pivot，将数组中小于pivot的元素放在pivot左边的left数组中，大于pivot的元素放在pivot右边的right数组中，然后依次递归。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function quickSort(arr)&#123;</span><br><span class="line">	var len = arr.length;</span><br><span class="line">	if(len &lt;= 1)&#123;</span><br><span class="line">		return arr;</span><br><span class="line">	&#125;</span><br><span class="line">	var pivotIndex = Math.floor(len / 2);</span><br><span class="line">	var pivot = arr.splice(pivotIndex, 1)[0];</span><br><span class="line">	var left =[],</span><br><span class="line">		right = [];</span><br><span class="line">	for(var i = 0; i &lt; len - 1; i++)&#123;</span><br><span class="line">		if(arr[i] &lt; pivot)&#123;</span><br><span class="line">			left.push(arr[i]);</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			right.push(arr[i]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return quickSort(left).concat([pivot], quickSort(right));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上两种为交换排序。</p>
-<hr>
-<h4 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h4><p>每一轮都从操作数组的第一个元素开始为基准，选择出最小的元素，将这个元素与基准元素交换。<br>[7, 5, 3, 11, 2, 1] –&gt; [1, 5, 3, 11, 2, 7] –&gt; [1, 2, 3, 11, 5, 7] –&gt; [1, 2, 3, 7, 5, 11] –&gt;[1, 2, 3, 5, 7, 11]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">function selectionSort(arr)&#123;</span><br><span class="line">	var len = arr.length,</span><br><span class="line">		minIndex;</span><br><span class="line">	</span><br><span class="line">	for(var i = 0; i &lt; len; i++)&#123;</span><br><span class="line">		minIndex = i;</span><br><span class="line">		for(var j = i + 1; j++; j &lt; len)&#123;</span><br><span class="line">			if(arr[j] &lt; arr[minIndex])&#123;</span><br><span class="line">				minIndex = j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		var temp = arr[minIndex];</span><br><span class="line">		arr[minIndex] = arr[i];</span><br><span class="line">		arr[i] = temp;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h4><p>1:构建大顶堆(从最后一个非叶节点开始调整)<br>2:将堆的根节点与最后一个叶节点互换，在数组中的表现为最大值到了数组最后一位<br>3:重新调整堆，不考虑已经归位的元素。<br>注意，调整堆的过程也是递归的过程。比如在调整根结点后，其子节点如果不满足大顶堆的规则，则也要调整。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">function heapSort(arr)&#123;</span><br><span class="line">	var len = arr.length;</span><br><span class="line">	bulidMaxHeap(arr);</span><br><span class="line"></span><br><span class="line">	for(var i = len - 1; i &gt; 0; i--)&#123;</span><br><span class="line">		swap(arr, 0, i);</span><br><span class="line">		heapify(arr, 0, --len);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	return arr;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function buildMaxHeap(arr)&#123;</span><br><span class="line"></span><br><span class="line">	var len = arr.length;</span><br><span class="line">	for(var i = Math.floor(len / 2) - 1; i &gt;= 0; i--)&#123;</span><br><span class="line">		heapify(arr, i, len);</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">   //从i节点开始自上而下的调整</span><br><span class="line">function heapify(arr, i, len)&#123;</span><br><span class="line">	var leftChild = 2 * i + 1,</span><br><span class="line">		rightChild = 2 * i + 2,</span><br><span class="line">		largest = i;</span><br><span class="line"></span><br><span class="line">	if(leftChild &lt; len &amp;&amp; arr[leftChild] &gt; arr[largest])&#123;</span><br><span class="line">		largest = leftChild;</span><br><span class="line">	&#125;</span><br><span class="line">	if(rightChild &lt; len &amp;&amp; arr[rightChild] &gt; arr[largest])&#123;</span><br><span class="line">		largest = rightChild;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	if(i != largest)&#123;</span><br><span class="line">		swap(arr, i, largest);</span><br><span class="line">		heapify(arr, largest, len);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fucntion swap(arr, i, j)&#123;</span><br><span class="line">	var temp = arr[i];</span><br><span class="line">	arr[i] = arr[j];</span><br><span class="line">	arr[j] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>注意heapSort中的循环。<br>以上两种为选择排序。</p>
-<hr>
-<h4 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h4><p>打牌的思路，每拿到一张牌与前面已经排好序的牌从右至左比较，插入到合适的位置。<br>[7, 5, 3, 11, 2, 1] –&gt; [7][5, 3, 11, 2, 1] –&gt; [5, 7][3, 11, 2, 1] –&gt; [3, 5, 7][11, 2, 1]<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function insertionSort(arr)&#123;</span><br><span class="line"></span><br><span class="line">	var len = arr.length,</span><br><span class="line">		preIndex,</span><br><span class="line">		current;</span><br><span class="line">	for(var i = 1; i &lt; len; i++)&#123;</span><br><span class="line">		preIndex = i - 1;</span><br><span class="line">		current = arr[i]; </span><br><span class="line">		//保留了这时刻的值，后期移位时之前的值会占据该位置，current的值保留，插入到其他位置</span><br><span class="line">		while(preIndex &gt;= 0 &amp;&amp; current &lt; arr[preIndex])&#123;</span><br><span class="line">			arr[preIndex + 1] = arr[preIndex];</span><br><span class="line">			preIndex --;</span><br><span class="line">		&#125;</span><br><span class="line">		arr[preIndex + 1] = current;			</span><br><span class="line">	&#125;</span><br><span class="line">	return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h4><p>优先比较距离较远的元素。核心在于间隔序列的设定。并没有针对每一轮gap后比较的结果进行合并，而是原始数组上，在每一个常数gap上，插入排序间隔为gap的元素。插入排序从1开始，希尔排序从gap开始，gap+1时相当于另一个插入排序，放在同一个循环中互不影响，因为间隔是一定的。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">function shellSort(arr)&#123;</span><br><span class="line">	var len = arr.length;</span><br><span class="line">	var gap = 1;</span><br><span class="line"></span><br><span class="line">	while(gap &lt; Math.floor(len / 3))&#123;</span><br><span class="line">		gap = 3 * gap + 1；</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	for(gap; gap &gt; 0; gap = Math.floor(gap/3))&#123;</span><br><span class="line">		for(var i = gap; i &lt; len; i ++)&#123;</span><br><span class="line">			var preIndex = i - gap;</span><br><span class="line">			var current = arr[i];</span><br><span class="line">			while(preIndex &gt;= 0 &amp;&amp; current &lt; arr[preIndex])&#123;</span><br><span class="line">				arr[preIndex + gap] = arr[preIndex];</span><br><span class="line">				preIndex -= gap;</span><br><span class="line">			&#125;</span><br><span class="line">			arr[preIndex + gap] = current;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	return arr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>以上为插入排序。</p>
-<hr>
-<h4 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h4><p>自上而下的递归方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">function mergeSort(arr)&#123;</span><br><span class="line">	var len = arr.length;</span><br><span class="line">	if(len &lt;= 1)&#123;</span><br><span class="line">		return arr;</span><br><span class="line">	&#125;</span><br><span class="line">	var middle = Math.floor(len / 2);</span><br><span class="line">	var left = arr.slice(0, middle);</span><br><span class="line">	var right = arr.slice(middle);</span><br><span class="line">	return merge(mergeSort(left), mergeSort(right));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function merge(left, right)&#123;</span><br><span class="line">	var result = [];</span><br><span class="line">	while(left.length &gt; 0 &amp;&amp; right.length &gt; 0)&#123;</span><br><span class="line">		if(left[0] &lt; right[0])&#123;</span><br><span class="line">			result.push(left.shift());</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			result.push(right.shift());</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	while(left.length)&#123;</span><br><span class="line">		result.push(left.shift());</span><br><span class="line">	&#125;</span><br><span class="line">	while(right.length)&#123;</span><br><span class="line">		result.push(right.shift());</span><br><span class="line">	&#125;</span><br><span class="line">	return result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<hr>
-<h4 id="基数排序"><a href="#基数排序" class="headerlink" title="基数排序"></a>基数排序</h4><p>根据健值的每位数字来分配桶;LSD从低位开始进行排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">var counter = [];</span><br><span class="line">function radixSort(arr, maxDigit)&#123;</span><br><span class="line">	var mod = 10;</span><br><span class="line">	var dev = 1;</span><br><span class="line">	for(var i = 0; i &lt; maxDigit; i++, dev *= 10, mod *= 10)&#123;</span><br><span class="line">		for(var j = 0; j &lt; arr.length; j++)&#123;</span><br><span class="line">			var bucket = parseInt((arr[j] % mod) / dev);</span><br><span class="line">			if(counter[bucket] == null)&#123;</span><br><span class="line">				counter[bucket] = [];</span><br><span class="line">			&#125;</span><br><span class="line">			counter[bucket].push(arr[j]);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		var pos = 0;</span><br><span class="line">		//把按第i位分配到桶的数据连起来</span><br><span class="line">		for(var j = 0; j &lt; counter.length; j++)&#123;</span><br><span class="line">			var value = null;</span><br><span class="line">			if(counter[j] != null)&#123;</span><br><span class="line">				/*while((value = counter[j].shift()) != null)&#123;</span><br><span class="line">					arr[pos++] = value;</span><br><span class="line">				&#125;*/</span><br><span class="line">				while(counter[j].length)&#123;</span><br><span class="line">					arr[pos++] = counter[j].shift();</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		return arr;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1535,7 +1522,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">16</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
