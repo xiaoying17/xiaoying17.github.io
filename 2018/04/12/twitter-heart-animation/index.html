@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="xiaoying17的路">
 <meta property="og:description" content="今天在codepen上看到一个推特点赞的动画，来学习一下。材料需要一张雪碧图，链接在这里。图有29帧。这个动画通过设置transition来改变background-position背景图像的起始位置来实现。当用户点赞时，background-position的值以steps函数阶段性的过渡效果从0变到-2800px，实现动画效果。当用户取消点赞时，background-position位置从-2">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-12T14:10:15.898Z">
+<meta property="og:updated_time" content="2018-04-12T14:56:14.808Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="twitter点赞效果">
 <meta name="twitter:description" content="今天在codepen上看到一个推特点赞的动画，来学习一下。材料需要一张雪碧图，链接在这里。图有29帧。这个动画通过设置transition来改变background-position背景图像的起始位置来实现。当用户点赞时，background-position的值以steps函数阶段性的过渡效果从0变到-2800px，实现动画效果。当用户取消点赞时，background-position位置从-2">
@@ -303,9 +303,9 @@
       
 
       
-        <p>今天在codepen上看到一个推特点赞的动画，来学习一下。材料需要一张雪碧图，<a href="https://cssanimation.rocks/images/posts/steps/heart.png" target="_blank" rel="noopener">链接在这里</a>。图有29帧。<br>这个动画通过设置transition来改变background-position背景图像的起始位置来实现。当用户点赞时，background-position的值以steps函数阶段性的过渡效果从0变到-2800px，实现<a href="https://codepen.io/xyliu/full/EEJdqg" target="_blank" rel="noopener">动画效果</a>。当用户取消点赞时，background-position位置从-2800px到0，同时加上默认的transition-duration: 0s;达到没有动画的从红心到白心的回退效果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">css如下:</span><br><span class="line">.heart &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background: url(&quot;https://cssanimation.rocks/images/posts/steps/heart.png&quot;) no-repeat;</span><br><span class="line">  background-position: 0 0;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">  transition: background-position 1s steps(28);</span><br><span class="line">  transition-duration: 0s;</span><br><span class="line">&#125; </span><br><span class="line">.is-active &#123;</span><br><span class="line">   transition-duration: 1s;</span><br><span class="line">   background-position: -2800px 0;</span><br><span class="line"> &#125;</span><br><span class="line"> js中监听鼠标事件，添加或删除.is-active类。</span><br></pre></td></tr></table></figure></p>
+        <p>今天在codepen上看到一个推特点赞的动画，来学习一下。材料需要一张雪碧图，<a href="https://cssanimation.rocks/images/posts/steps/heart.png" target="_blank" rel="noopener">链接在这里</a>。图有29帧。这个动画通过设置transition来改变background-position背景图像的起始位置来实现。<br>当用户点赞时，background-position的值以steps函数阶段性的过渡效果从0变到-2800px，实现<a href="https://codepen.io/xyliu/full/EEJdqg" target="_blank" rel="noopener">动画效果</a>。当用户取消点赞时，background-position位置从-2800px到0，同时加上默认的transition-duration: 0s;达到没有动画的从红心到白心的回退效果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">css如下:</span><br><span class="line">.heart &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background: url(&quot;https://cssanimation.rocks/images/posts/steps/heart.png&quot;) no-repeat;</span><br><span class="line">  background-position: 0 0;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">  transition: background-position 1s steps(28);</span><br><span class="line">  transition-duration: 0s;</span><br><span class="line">&#125; </span><br><span class="line">.is-active &#123;</span><br><span class="line">   transition-duration: 1s;</span><br><span class="line">   background-position: -2800px 0;</span><br><span class="line"> &#125;</span><br><span class="line"> js中监听鼠标事件，添加或删除.is-active类。</span><br></pre></td></tr></table></figure></p>
 <p>对于transition,通过transition-property属性设置过渡效果的css属性名称，以transition-duration规定过渡效果需要的时间定为1s,以transition-timing-function规定速度效果的速度曲线。</p>
-<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p> translate(x, y)，在2D平面内对元素进行平移，从其当前位置根据给定的left（x坐标）和 top（y坐标）位置参数移动。</p>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p> translate(x, y)，在2D平面内对元素进行平移，从其当前位置根据给定的left（x坐标）和 top（y坐标）位置参数移动。<br> <a href="https://designmodo.com/steps-css-animations/" target="_blank" rel="noopener">steps()函数参考在这里。</a></p>
 
       
     </div>
@@ -339,6 +339,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/16/Webpack核心概念/" rel="prev" title="webpack核心概念">
+                webpack核心概念 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -415,7 +419,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
