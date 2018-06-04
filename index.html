@@ -236,6 +236,391 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/03/CSS-Flexbox-Layout/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoying17">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoying17的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/03/CSS-Flexbox-Layout/" itemprop="url">CSS Flexbox Layout</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-03T14:21:19+08:00">
+                2018-06-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="Flex-Container"><a href="#Flex-Container" class="headerlink" title="Flex Container"></a>Flex Container</h4><p>1.Sets the context for flexbox layout<br>2.Contains flex items, the actual elements you layout using flexbox<br>3.Can be any block-level or inline element</p>
+<h4 id="Flex-Item"><a href="#Flex-Item" class="headerlink" title="Flex Item"></a>Flex Item</h4><p>1.Every direct child of a flex container<br>2.There can be any number of flex items inside a flex container<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.container &#123;</span><br><span class="line">	display: flex; //creates a block level flex container</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Controlling-the-Direction-of-Flex-Items"><a href="#Controlling-the-Direction-of-Flex-Items" class="headerlink" title="Controlling the Direction of Flex Items"></a>Controlling the Direction of Flex Items</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-direction: row/ row-reverse/ column/ column-reverse</span><br></pre></td></tr></table></figure>
+<h4 id="Wrapping-Flex-Items"><a href="#Wrapping-Flex-Items" class="headerlink" title="Wrapping Flex Items"></a>Wrapping Flex Items</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flex-wrap: wrap;</span><br></pre></td></tr></table></figure>
+<h4 id="Distributing-Space-Inside-a-Flex-Container"><a href="#Distributing-Space-Inside-a-Flex-Container" class="headerlink" title="Distributing Space Inside a Flex Container"></a>Distributing Space Inside a Flex Container</h4><p>The justify content property lets you control the position and alignment of flex items on the main axis, and how space should be distributed in a flex container.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">justify-content: flex-start/ flex-end/ center/ space-between/ space-around</span><br></pre></td></tr></table></figure></p>
+<p>A margin set to auto will absorb any extra space around a flex item and push other flex items into different positions.</p>
+<h4 id="Changing-the-Order-of-Flex-Items"><a href="#Changing-the-Order-of-Flex-Items" class="headerlink" title="Changing the Order of Flex Items"></a>Changing the Order of Flex Items</h4><p>The order are used to change the order of any flex item, and applies to flex items only.</p>
+<h4 id="Growing-Flex-Items"><a href="#Growing-Flex-Items" class="headerlink" title="Growing Flex Items"></a>Growing Flex Items</h4><p>The higher the flex grow value, the more an item grows relative to the other items.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">flex-grow:</span><br><span class="line"></span><br><span class="line">flex: (flex-grow\flex-basis\flex-shrink)</span><br></pre></td></tr></table></figure></p>
+<p>When using flex: 2, the default property is flex-basis : 0, so the column never break into different lines.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.item &#123;</span><br><span class="line">	align-items: center;</span><br><span class="line">&#125;</span><br><span class="line">.item-1 &#123;</span><br><span class="line">	align-self: center\ flex-start\ flex-end\ stretch(default )</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/02/html-forms/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoying17">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoying17的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/02/html-forms/" itemprop="url">html forms</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-02T09:00:27+08:00">
+                2018-06-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h4 id="radio"><a href="#radio" class="headerlink" title="radio"></a>radio</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;Age:&lt;/label&gt; //this label has nothing to associate with,so there are no &quot;for&quot; attributes.</span><br><span class="line">&lt;input type=&quot;radio&quot; id=&quot;under_13&quot; name=&quot;user_age&quot;&gt;&lt;label for=&quot;under_13&quot;&gt;Under 13&lt;/label&gt;&lt;br&gt;</span><br><span class="line">&lt;input type=&quot;radio&quot; id=&quot;over_13&quot; name=&quot;user_age&quot;&gt;&lt;label for=&quot;over_13&quot;&gt;Over 13&lt;/label&gt;&lt;br&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="checkbox"><a href="#checkbox" class="headerlink" title="checkbox"></a>checkbox</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h4 id="table"><a href="#table" class="headerlink" title="table"></a>table</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">tr table row</span><br><span class="line">&lt;tabel&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td&gt;A&lt;/td&gt;</span><br><span class="line">		&lt;td&gt;B&lt;/td&gt;</span><br><span class="line">		&lt;td&gt;C&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">	&lt;tr&gt;</span><br><span class="line">		&lt;td&gt;D&lt;/td&gt;</span><br><span class="line">		&lt;td&gt;E&lt;/td&gt;</span><br><span class="line">		&lt;td&gt;F&lt;/td&gt;</span><br><span class="line">	&lt;/tr&gt;</span><br><span class="line">&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+<p>Also, we can use a table header cell element on each of these columns to tell the browser,search engine crawlers, and screen readers that they are actually headers and not just regular data.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">change td to th</span><br><span class="line">table header cell elements</span><br></pre></td></tr></table></figure></p>
+<p>Table header elements is nice to define for search crawlers and access ability purposes, and it’s helpful for styling.<br>Table footer should contain summary of the table.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;tfoot&gt;</span><br><span class="line">    &lt;tr&gt;</span><br><span class="line">      	&lt;td  colspan=&quot;2&quot;&gt;Data is updated every 15 minutes.&lt;/td&gt;</span><br><span class="line">    &lt;/tr&gt;  </span><br><span class="line">&lt;tfoot&gt;</span><br></pre></td></tr></table></figure></p>
+<h4 id="Responsive-Layouts"><a href="#Responsive-Layouts" class="headerlink" title="Responsive Layouts"></a>Responsive Layouts</h4><p>We should creat breakpoints based on our content. Going from a one column layout to a muti-column layout is a pretty dramatic change and not every breakpoint demands it.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/29/CSS-Layout-Basics-Review/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoying17">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoying17的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/05/29/CSS-Layout-Basics-Review/" itemprop="url">CSS Layout Basics Review</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-29T20:46:19+08:00">
+                2018-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>1 adding a wrapper in layout  with a div element<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">eg. &lt;div class=&quot;wrapper&quot;&gt;&lt;/div&gt;</span><br><span class="line">.wrapper &#123;</span><br><span class="line">	width: 70%;</span><br><span class="line">	margin: 0 auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>2 Why Vertical Margins Collapse<br>h1’s top margin is touching the top margin of the body because there is no border or padding area in the header or padding area in the header or a content area above the h1 to seperate its top margin from the body.So there is nothing interrupt the margins, then the margins collapse to the largest of the two margin values.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1) set the h1 top margin to 0</span><br><span class="line">2) give the main header any top padding value.</span><br></pre></td></tr></table></figure></p>
+<p>3 Centering Page Content and Creating a Full-width Header<br>full width on header and footer while keeping all the content centered on the page.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;header&gt;</span><br><span class="line">	&lt;div class=&quot;container&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/header&gt;</span><br><span class="line"></span><br><span class="line">&lt;div class=&quot;container&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;footer&gt;</span><br><span class="line">	&lt;div class=&quot;container&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/footer&gt;</span><br><span class="line"></span><br><span class="line">.container&#123;&#125; same as ablove</span><br></pre></td></tr></table></figure></p>
+<p>4 Mobile layouts are usually simple one column layouts</p>
+<p>5 Creating a Sticky Footer<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;wrapp&quot;&gt;</span><br><span class="line">	&lt;header class=&quot;main-header&quot;&gt;</span><br><span class="line">	&lt;/header&gt;</span><br><span class="line">	&lt;div class=&quot;container&quot;&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;footer&gt;&lt;/footer&gt;</span><br><span class="line"></span><br><span class="line">@media (min-width: 769px) &#123;</span><br><span class="line"></span><br><span class="line">	.wrap &#123;</span><br><span class="line">		min-height: calc(100vh - 89px);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p> The vw/vh units are interesting in that 1 unit reflects 1/100th the width of the viewport. </p>
+<p> 6 Positioning Elements Side-By-Side with Inline Display<br> <code>&lt;div&gt; &lt;p&gt; &lt;h1&gt;</code> stack on top of each other, like a stack of blocks<br> Inline elements like img,a,span tag.<br> When it comes to margins and padding, browsers treat inline elements differently.The browser will not apply any height and width properties or top and bottom margin settings.An inline element will only accept left and right margins and any padding value.Inline elements only take on left and right padding values applied not the top and bottom values.<br> 7 Using Inline-Block to set Width, Height, Top and Bottom Margin and Padding</p>
+<p> 8 Remove gaps between inline and inline-block elements<br>  1) remove the spaces in the markup between the closing and opening list item tags<br>  2) apply a negative right-margin values</p>
+<p>  9 A parent container with floated elements may not always collapse to no height at all.<br>If the container includes a padding value or a height value, it will have some visible height。<br>1）force the container a fix hight, not a flexible solution<br>2)overflow: auto / hidden force the element to expand and contain the floated elements. But the overflow property is not specifiality for floats.The value hidden can hide content that shouldn’t be hidden, and the value auto can trigger unwanted scroll bars.<br>3) use the content property to genereate a blank pseudo element,so the element appears in the page as would a real HTML element.Then use display table to mimic the HTML table layput model as a block level table. Last, the value both clears any collapsed space created by floats on both side of the container.When aplly this clearfix, it moves the element below all floated elements.<br>You can change the order by float left or right.<br>Use inline-block to lay out navigation items side-by-side or create a simple two-column layout, or when you need control over center and vertical alignment.<br>Floats do not create default horizontal white space between elements.</p>
+<p>10） by default, the stacking order of positioned elements,is the order they appear in the source code.<br>So elements that appear later in the code,sit on top of elements that appear earlier in the code. Position elements default z-index is 0. To make header highest in the order, you can set z-index 1000.</p>
+<p>11) To dry css, we can abstract repeated CSS properties into several rules so as to each property and value is only defined once.</p>
+<p>12)why we might wanna use some of the structural pseudo classes or substring matching attribute selectors in place of regular ID’s or class selectors. Because the special selectors can come in handy when we don’t have a lot of control over HTML. For example, we may be working with a content management system or framework that gives us little or no access to the html preventing us from being able to add classes or IDs to certain elements. Also it will prevent us from constantly changing the order of classes in the HTML when we have dynamic content that’s always changing.</p>
+<p>13）nth-of-type  nth-last-of-type nth-child<br>nav a:not(:first-child)<br>Pseudo elements   :first-line  :first-letter<br>A replaced element is any element whose apperance and dimensions are predefined without any use of CSS.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/28/CSS-Review/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1097,372 +1482,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/12/twitter-heart-animation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoying17">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoying17的路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/12/twitter-heart-animation/" itemprop="url">twitter点赞效果</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-12T20:46:39+08:00">
-                2018-04-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天在codepen上看到一个推特点赞的动画，来学习一下。材料需要一张雪碧图，<a href="https://cssanimation.rocks/images/posts/steps/heart.png" target="_blank" rel="noopener">链接在这里</a>。图有29帧。这个动画通过设置transition来改变background-position背景图像的起始位置来实现。<br>当用户点赞时，background-position的值以steps函数阶段性的过渡效果从0变到-2800px，实现<a href="https://codepen.io/xyliu/full/EEJdqg" target="_blank" rel="noopener">动画效果</a>。当用户取消点赞时，background-position位置从-2800px到0，同时加上默认的transition-duration: 0s;达到没有动画的从红心到白心的回退效果。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">css如下:</span><br><span class="line">.heart &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background: url(&quot;https://cssanimation.rocks/images/posts/steps/heart.png&quot;) no-repeat;</span><br><span class="line">  background-position: 0 0;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">  transition: background-position 1s steps(28);</span><br><span class="line">  transition-duration: 0s;</span><br><span class="line">&#125; </span><br><span class="line">.is-active &#123;</span><br><span class="line">   transition-duration: 1s;</span><br><span class="line">   background-position: -2800px 0;</span><br><span class="line"> &#125;</span><br><span class="line"> js中监听鼠标事件，添加或删除.is-active类。</span><br></pre></td></tr></table></figure></p>
-<p>对于transition,通过transition-property属性设置过渡效果的css属性名称，以transition-duration规定过渡效果需要的时间定为1s,以transition-timing-function规定速度效果的速度曲线。</p>
-<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><p> translate(x, y)，在2D平面内对元素进行平移，从其当前位置根据给定的left（x坐标）和 top（y坐标）位置参数移动。<br> <a href="https://designmodo.com/steps-css-animations/" target="_blank" rel="noopener">steps()函数参考在这里。</a></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/01/深克隆与浅克隆/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoying17">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoying17的路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/01/深克隆与浅克隆/" itemprop="url">深克隆与浅克隆</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T16:56:32+08:00">
-                2018-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h4><p>深克隆与浅克隆针对的是js中的复杂数据类型(Object,Array等)。对象的实例是存储在堆内存中然后通过一个引用值去操作对象，因此有复制引用和复制实例两种情况，极为浅克隆与深克隆的区别。<br>浅克隆是复制引用，复制后的引用都是指向同一个对象的实例，彼此间的操作会互相影响。而深克隆是在堆中重新分配内存，把源对象实例的所有属性都进行新建复制，复制后的对象与原来的对象是完全隔离的。</p>
-<h4 id="浅克隆"><a href="#浅克隆" class="headerlink" title="浅克隆"></a>浅克隆</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//浅克隆函数</span><br><span class="line">function shallowClone(o)&#123;</span><br><span class="line">	const obj = &#123;&#125;;</span><br><span class="line">	for( let i in o )&#123;</span><br><span class="line">		obj[i] = o[i];</span><br><span class="line">	&#125;</span><br><span class="line">	return obj;</span><br><span class="line">&#125;</span><br><span class="line">//被克隆对象</span><br><span class="line">const oldObj = &#123;</span><br><span class="line">	a: 1,</span><br><span class="line">	b: [&apos;e&apos;, &apos;f&apos;, &apos;g&apos;],</span><br><span class="line">	c: &#123;h: &#123;i : 2&#125;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">const newObj = shallowClone(oldObj);</span><br><span class="line">console.log(oldObj.c.h === newObj.c.h);  //true</span><br><span class="line"></span><br><span class="line">//newObj与oldObj指向同一段堆内存，对其中一个对象的修改会造成另一个对象同时也会被修改。</span><br></pre></td></tr></table></figure>
-<h4 id="深克隆"><a href="#深克隆" class="headerlink" title="深克隆"></a>深克隆</h4><p>首先，面对不同的对象(正则、数组、Date等)要采用不同的处理方式，以下是一个对象类型判断函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">const isType = (obj, type) =&gt; &#123;</span><br><span class="line">	if(typeof obj !== &apos;object&apos;) return false;</span><br><span class="line">	const typeString = Object.prototype.toString.call(obj);</span><br><span class="line">	let flag;</span><br><span class="line">	switch (type) &#123;</span><br><span class="line">		case &apos;Array&apos;:</span><br><span class="line">			flag = typeString === &apos;[object Array]&apos;;</span><br><span class="line">			break;</span><br><span class="line">		case &apos;Date&apos;:</span><br><span class="line">			flag = typeString === &apos;[object Date]&apos;;</span><br><span class="line">			break;</span><br><span class="line">		case &apos;RegExp&apos;:</span><br><span class="line">			flag = typeString === &apos;[object RegExp]&apos;;</span><br><span class="line">			break;</span><br><span class="line">		default:</span><br><span class="line">			flag = false;</span><br><span class="line">	&#125;</span><br><span class="line">	return flag;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>另外，对于正则函数需要实现一个提取flags的函数。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const getRegExp = re =&gt; &#123;</span><br><span class="line">	var flags = &apos;&apos;;</span><br><span class="line">	if(re.global) flags += &apos;g&apos;;</span><br><span class="line">	if(re.ignoreCase) flags += &apos;i&apos;;</span><br><span class="line">	if(re.multiline) flags += &apos;m&apos;;</span><br><span class="line">	return flags;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>最后，是深克隆的实现。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">const clone = parent =&gt; &#123;</span><br><span class="line">	//维护两个储存循环引用的数组</span><br><span class="line">	const parents = [];</span><br><span class="line">	const children = [];</span><br><span class="line"></span><br><span class="line">	const _clone = parent =&gt; &#123;</span><br><span class="line">		if (parent === null) return null;</span><br><span class="line">		if (typeof parent !== &apos;object&apos;) return parent;</span><br><span class="line"></span><br><span class="line">		let child, proto;</span><br><span class="line"></span><br><span class="line">		if(isType(parent, &apos;Array&apos;))&#123;</span><br><span class="line">			//对数组做特殊处理</span><br><span class="line">			child = [];</span><br><span class="line">		&#125;else if(isType(parent, &apos;RegExp&apos;))&#123;</span><br><span class="line">			//对正则对象做特殊处理</span><br><span class="line">			child = new RegExp(parent.source, getRegExp(parent));</span><br><span class="line">			if(parent.lastIndex) child.lastIndex = parent.lastIndex;</span><br><span class="line">		&#125;else if(isType(parent, &apos;Date&apos;))&#123;</span><br><span class="line">			//对Date对象做特殊处理</span><br><span class="line">			child = new Date(parent.getTime());</span><br><span class="line">		&#125;else&#123;</span><br><span class="line">			//处理对象原型</span><br><span class="line">			proto = Object.getPrototypeOf(parent);</span><br><span class="line">			//利用Object.create切断原型链</span><br><span class="line">			child = Object.create(proto);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		//处理循环引用</span><br><span class="line">		const index = parents.indexOf(parent);</span><br><span class="line"></span><br><span class="line">		if(index != -1) &#123;</span><br><span class="line">			//如果父数组存在本对象，说明之前已经被引用过，直接返回此对象</span><br><span class="line">			return children[index];</span><br><span class="line">		&#125;</span><br><span class="line">		parents.push(parent);</span><br><span class="line">		children.push(parent);</span><br><span class="line"></span><br><span class="line">		for(let i in parent) &#123;</span><br><span class="line">			//递归</span><br><span class="line">			child[i] = _clone(parent[i]);</span><br><span class="line">		&#125;</span><br><span class="line"></span><br><span class="line">		return child;</span><br><span class="line">	&#125;;</span><br><span class="line">	return _clone(parent);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/17/CSS-Sprite/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoying17">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoying17的路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/17/CSS-Sprite/" itemprop="url">CSS Sprite</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T19:21:44+08:00">
-                2018-03-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><p>控制一个层，可显示的区域范围大小，通过一个窗口，进行背景图的滑动。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1513,7 +1532,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
