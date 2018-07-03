@@ -236,6 +236,370 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/03/CSS-Best-Practices/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoying17">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoying17的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/03/CSS-Best-Practices/" itemprop="url">CSS Best Practices</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-03T20:41:00+08:00">
+                2018-07-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>CSS Should Be predictable, reusable, maintainable, scalable.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.button &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">	padding: 5px;</span><br><span class="line">	border-radius: 12px;</span><br><span class="line">&#125;</span><br><span class="line">.filed &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">	padding: 5px;</span><br><span class="line">	border-radius: 12px;</span><br><span class="line">&#125;</span><br><span class="line">.column &#123;</span><br><span class="line">	float: left;</span><br><span class="line">	padding: 5px;</span><br><span class="line">	border-radius: 12x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.button, .field, .column &#123;</span><br><span class="line">	padding: 5px;</span><br><span class="line">	border-radius: 12px;</span><br><span class="line">&#125;</span><br><span class="line">.button, .field &#123;</span><br><span class="line">	display: inline-block;</span><br><span class="line">&#125;</span><br><span class="line">.column &#123;</span><br><span class="line">	float: left;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Avoid using the same class or ID for styling and JavaScript. Keep those layers seperate.<br>Javascript-Specific Classes, Prefix them with “js-“. They’re easily identifiable as JS hooks. Decouples presentational classes from functional classes. Reduce the chances of affecting Javascript behavior when making theme or structual changes in the CSS.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/27/How-to-animate-a-line-drawing-in-SVG/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoying17">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoying17的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/27/How-to-animate-a-line-drawing-in-SVG/" itemprop="url">How to animate a line drawing in SVG</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-27T07:19:00+08:00">
+                2018-06-27
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/04/SVG-Basics/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoying17">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoying17的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/06/04/SVG-Basics/" itemprop="url">SVG Basics</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-04T20:51:03+08:00">
+                2018-06-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>SVG files typically don’t look good or compress well when used for photographic imagery.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">transition: &lt;transition-property&gt; &lt;transition-duration&gt; &lt;transition-timing-function&gt; &lt;transition-delay&gt;;</span><br><span class="line">transition: opacity .3s .2s, background .4s .3s, box-shadow .5s 0s;</span><br><span class="line">transition-timing-function: ease-out;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform-origin   tranform变换的原点</span><br></pre></td></tr></table></figure>
+<p>CSS transforms are design-specific, positioning offsets are layout-s[ecific properties, translate functions take advantage of hardware acceleration.</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/03/CSS-Flexbox-Layout/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1113,375 +1477,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/18/Design-Code-My-Personal-Website-1-2/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoying17">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoying17的路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/18/Design-Code-My-Personal-Website-1-2/" itemprop="url">Design + Code My Personal Website 1 + 2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-18T22:46:56+08:00">
-                2018-04-18
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="理解项目"><a href="#理解项目" class="headerlink" title="理解项目"></a>理解项目</h4><p>1、Who is the owner?<br>What is important to them?写自己的产品，并且让用户了解这个网页是干什么的<br>2、Who is the audience?<br>Perspective Employers.用户应该能很容易看到owner的作品和其他内容，联系方式等。<br>3、Generate the Content Strategy</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/17/Animation/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoying17">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoying17的路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/17/Animation/" itemprop="url">Animation</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-17T20:06:56+08:00">
-                2018-04-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Animation定义: 1、Instill with life 2、Having the appearance of movement.<br>Css Movement包括 1、Transition Property 2、Animation Property + Keyframes<br>Elements that you should animate(UX)</p>
-<h4 id="Part-1-Transitions"><a href="#Part-1-Transitions" class="headerlink" title="Part 1  Transitions"></a>Part 1  Transitions</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.element &#123;</span><br><span class="line">	transition: [property] [duration] [ease] [delay];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">eg:</span><br><span class="line">.element &#123;</span><br><span class="line">	transition: opacity 300ms ease-in-out 1s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Performant Properties: position scale rotation opacity,不会引起重流重绘。<br>Triggering: 1、Hover pseudo class 2、Class changes</p>
-<h4 id="Part-2-Keyframes"><a href="#Part-2-Keyframes" class="headerlink" title="Part 2 Keyframes"></a>Part 2 Keyframes</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">@keyframes [name] &#123;</span><br><span class="line">	from &#123;</span><br><span class="line">		[styles];</span><br><span class="line">	&#125;</span><br><span class="line">	to &#123;</span><br><span class="line">		[styles];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Keyframes is what animation does, and the animation is how it’s done,like speed ,time.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.element &#123;</span><br><span class="line">	animation: [name] [duration] [timing-function] [delay]</span><br><span class="line">	[iteration-count] [direction] [fill-mode] [play-state];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Triggering: 1、Hover pseduo class 2、Class changes 3、new elements<br>注意transform是个属性，可以scale放大缩小、rotate旋转等，动画是从一个状态到另一个状态。</p>
-<h4 id="When-to-Animate"><a href="#When-to-Animate" class="headerlink" title="When to Animate"></a>When to Animate</h4><p>1.Orientation orient people to where they are from where they were,用户从一个界面到另一个界面，两个界面用这个动画连接。<br>2.Functional Change  answers what does this element do now。eg:button有on、off状态，可以清楚地显示现在是在哪个状态。<br>3.New Element help people know something new happened here.<br>4.Highlight little pulsing bring our attention to that spot<br>5.Visual Feedback eg:mac系统邮件点击发送后，提交界面向上滑动，有个模拟发送的效果。make the layout understand what I am asking it to do. animation represent that idea with motion.<br>6.System Status eg:进度条 let users know we aren’t blocked</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/16/Webpack核心概念/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoying17">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoying17的路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/16/Webpack核心概念/" itemprop="url">webpack核心概念</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-16T22:03:17+08:00">
-                2018-04-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>看到慕课网上照片画廊的一个项目效果不错，但由于版本太旧了，各种坑。这个项目用到react和webpack打包工具。之前react项目直接用create-react-app的方式搭建的架构，这次学习了一下webpack。<br>webpack是js程序的静态模块打包器。配置在webpack.config.js中。<br>核心有四点:<br>1.入口起点，即起始的位置，进入起点后，找出哪些模块和库事入口起点依赖的。这些依赖项随之被处理。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">	entry: &apos;./path/to/my/entry/file.js&apos;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-<p>2.出口，即webpack从哪里输出它所创建的bundles及如何命名这些文件。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">const path = require(&apos;path&apos;);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">	...</span><br><span class="line">	output: &#123;</span><br><span class="line">		path: path.resolve(__dirname, &apos;dist&apos;),</span><br><span class="line">		filename: &apos;bundle.js&apos;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>3.loader,对模块源代码进行转换，将其他类型的语言转换为js，可以加载css到js中。<br>首先要npm install –save-dev相关loader,再在配置中指定loader。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">module: &#123;</span><br><span class="line">    rules: [</span><br><span class="line">      &#123;</span><br><span class="line">        test: /\.css$/,       //正则匹配.css文件</span><br><span class="line">        use: [</span><br><span class="line">          &#123; loader: &apos;style-loader&apos; &#125;,   //Adds CSS to the DOM by injecting a &lt;style&gt; tag</span><br><span class="line">          &#123;</span><br><span class="line">            loader: &apos;css-loader&apos;,  //css-loader 解释 @import 和 url() ，</span><br><span class="line">                                   //会 import/require() 后再解析它们。</span><br><span class="line">            options: &#123;</span><br><span class="line">              modules: true</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">内联</span><br></pre></td></tr></table></figure></p>
-<p>4.插件，用于拓展webpack功能，如可以最小化生成文件等。用法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">const HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;); //通过 npm 安装</span><br><span class="line">const webpack = require(&apos;webpack&apos;); //访问内置的插件</span><br><span class="line"></span><br><span class="line">同时在module.rules中添加plugins项。</span><br><span class="line">plugins: [</span><br><span class="line">    new webpack.optimize.UglifyJsPlugin(),</span><br><span class="line">    new HtmlWebpackPlugin(&#123;template: &apos;./src/index.html&apos;&#125;)</span><br><span class="line">  ]</span><br></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1532,7 +1527,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">26</span>
+                  <span class="site-state-item-count">29</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
