@@ -236,6 +236,284 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/08/vue-series-11-20/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoying17">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoying17的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/08/vue-series-11-20/" itemprop="url">vue series 11-20</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-08T17:47:19+08:00">
+                2018-07-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Conditionals"><a href="#Conditionals" class="headerlink" title="Conditionals"></a>Conditionals</h3><p>Only checking the else-if when if is false. The “v-show” just toggle the display style, while “v-if” can remove the dom element.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">data: &#123;</span><br><span class="line">	error: true,</span><br><span class="line">	success: false</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">**************************************</span><br><span class="line"></span><br><span class="line">&lt;h1&gt;Conditionals&lt;/h1&gt;</span><br><span class="line">&lt;button v-on:click=&quot;error = !error&quot;&gt;Toggle Error&lt;/button&gt;</span><br><span class="line">&lt;button v-on:click=&quot;success = !success&quot;&gt;Toggle Success&lt;/button&gt;</span><br><span class="line">&lt;p v-show=&quot;error&quot;&gt;Got an error&lt;/p&gt;</span><br><span class="line">&lt;p v-show=&quot;success&quot;&gt;Got success&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p v-if=&quot;error&quot;&gt;Got an error&lt;/p&gt;</span><br><span class="line">&lt;p v-else-if=&quot;success&quot;&gt;Got success&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Looping-with-v-for"><a href="#Looping-with-v-for" class="headerlink" title="Looping with v-for"></a>Looping with v-for</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">	characters:[&apos;Mario&apos;,&apos;Luigi&apos;,&apos;Yoshi&apos;,&apos;Bowser&apos;],</span><br><span class="line">	ninjas:[</span><br><span class="line">		&#123;name:&apos;Ryu&apos;,age:25&#125;,</span><br><span class="line">		&#123;name:&apos;Yoshi&apos;,age:35&#125;,</span><br><span class="line">		&#123;name:&apos;Ken&apos;,age:55&#125;</span><br><span class="line">	]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">*************************************</span><br><span class="line">&lt;h1&gt;Looping through lists&lt;/h1&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li v-for=&quot;character in characters&quot;&gt;&#123;&#123; character &#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li v-for=&quot;(ninja, index) in ninjas&quot;&gt;&#123;&#123;index&#125;&#125; - &#123;&#123; ninja.name &#125;&#125; - &#123;&#123; ninja.age &#125;&#125;&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">&lt;template v-for=&quot;ninja in ninjas&quot;&gt;</span><br><span class="line">	&lt;div v-for=&quot;(val, key) in ninja&quot;&gt;</span><br><span class="line">		&lt;p&gt;&#123;&#123; key &#125;&#125; - &#123;&#123; val &#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="Simple-Punchbag-Game"><a href="#Simple-Punchbag-Game" class="headerlink" title="Simple Punchbag Game"></a>Simple Punchbag Game</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;bag-health&quot;&gt;</span><br><span class="line">	&lt;div v-bind:style=&quot;&#123; width: health + &apos;%&apos;&#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;controls&quot;&gt;</span><br><span class="line">	&lt;button v-show=&quot;!ended&quot; v-on:click=&quot;punch&quot;&gt;Punch&lt;/button&gt;</span><br><span class="line">	&lt;button v-on:click=&quot;restart&quot;&gt;Restart&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">****************************************</span><br><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">	health: 100,</span><br><span class="line">	ended: false</span><br><span class="line">&#125;,</span><br><span class="line">methods: &#123;</span><br><span class="line">	punch: function()&#123;</span><br><span class="line">		this.health -= 10;</span><br><span class="line">		if(this.health &lt;= 0)&#123;</span><br><span class="line">			this.ended = true;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	restart: function()&#123;</span><br><span class="line">		this.health = 100;</span><br><span class="line">		this.ended = false;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Multiple-Vue-Instances"><a href="#Multiple-Vue-Instances" class="headerlink" title="Multiple Vue Instances"></a>Multiple Vue Instances</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">	var one = new Vue(&#123;</span><br><span class="line">	el: &apos;#vue-app1&apos;,</span><br><span class="line">	data: &#123;</span><br><span class="line">		title: &quot;lxy&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods: &#123;</span><br><span class="line">		</span><br><span class="line">	&#125;,</span><br><span class="line">	computed: &#123;</span><br><span class="line">		greet: function()&#123;</span><br><span class="line">			return &quot;coming from app1&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;);</span><br><span class="line">var two = new Vue(&#123;</span><br><span class="line">	el: &apos;#vue-app2&apos;,</span><br><span class="line">	data: &#123;</span><br><span class="line">		title: &quot;miracle&quot;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods: &#123;</span><br><span class="line">		changeTitle: function()&#123;</span><br><span class="line">			one.title = &quot;Title has changed&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	computed: &#123;</span><br><span class="line">		greet: function()&#123;</span><br><span class="line">			return &quot;coming from app2&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Intro-to-Components"><a href="#Intro-to-Components" class="headerlink" title="Intro to Components"></a>Intro to Components</h3><p>A component is an reusable piece of code. When we’re creating a component there’s going to be multiple instances using the same kind of definition and if we just use an object instead of a function here, then all the instance will share the object by reference .If we change one of the instance then it’s going to update in every single component. When using function, we just calling this function to return a fresh copy of data.</p>
+<pre><code class="dash">Vue.component(&apos;greeting&apos;,{
+    template:&apos;&lt;p&gt;Hey there. I am {{name}}  &lt;button v-on:click=&quot;changeName()&quot;&gt;changeName&lt;/button&gt;&lt;/p&gt;&apos;,
+    data: function(){
+        return {
+            name: &apos;Yoshi&apos;
+        }
+    },
+    methods: {
+        changeName: function(){
+            this.name = &quot;koen&quot;;
+        }
+    }
+})
+
+********************************************
+&lt;greeting&gt;&lt;/greeting&gt;
+</code></pre>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/07/Vue-series-1-10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoying17">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoying17的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/07/Vue-series-1-10/" itemprop="url">Vue series 1-10</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-07T09:36:20+08:00">
+                2018-07-07
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h3><pre><code>A front-end framework, create js drive web applications, runs in the browser, no need to make multiple server requests for pages. Very lean and very high run-time performance
+</code></pre><h3 id="The-Vue-Instance"><a href="#The-Vue-Instance" class="headerlink" title="The Vue Instance"></a>The Vue Instance</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;vue-app&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">**************************</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">	el: &apos;#vue-app&apos;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Data-amp-methods"><a href="#Data-amp-methods" class="headerlink" title="Data &amp; methods"></a>Data &amp; methods</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;vue-app&quot;&gt;</span><br><span class="line">	&lt;h1&gt;Name: &#123;&#123; name &#125;&#125;&lt;/h1&gt;</span><br><span class="line">	&lt;h1&gt;&#123;&#123; greet(&apos;afternoon&apos;) &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">***************************</span><br><span class="line"></span><br><span class="line">new Vue(&#123;</span><br><span class="line">	el: &apos;#vue-app&apos;,</span><br><span class="line">	data: &#123;</span><br><span class="line">		name: &apos;Shawn&apos;</span><br><span class="line">	&#125;,</span><br><span class="line">	methods: &#123;</span><br><span class="line">		greet: function(time)&#123;</span><br><span class="line">			return &apos;Good&apos; + time + &apos; &apos; + this.name;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125; </span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="Data-Binding"><a href="#Data-Binding" class="headerlink" title="Data Binding"></a>Data Binding</h3><pre><code>v-bind is  a directive and instruction to bind a attribute to dynamic data that we have stored in vue instance. use &quot;&quot; instead of {{}} 
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;a v-bind:href=&quot;website&quot;&gt;Links&lt;/a&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; v-bind:value=&quot;name&quot;&gt;</span><br><span class="line">&lt;p v-html=&quot;websiteTag&quot;&gt;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">**************************************</span><br><span class="line">data: &#123;</span><br><span class="line">	...</span><br><span class="line">	website: &quot;http://www.baidu.com&quot;,</span><br><span class="line">	websiteTag: &apos;&lt;a href=&quot;http://www.baidu.com&quot;&gt;The Net website&lt;/a&gt;&apos;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Events"><a href="#Events" class="headerlink" title="Events"></a>Events</h3><p>After v-on: is what type of event we want to listen to. When binding methods, we don’t use ().<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;button v-on:click=&quot;age++&quot;&gt;plus button&lt;/button&gt;</span><br><span class="line">&lt;button v-on:click=&quot;age--&quot;&gt;subtract button&lt;/button&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;button v-on:click=&quot;add&quot;&gt;plus button&lt;/button&gt;</span><br><span class="line">&lt;button v-on:click=&quot;subtract&quot;&gt;subtract button&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">***************************************</span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">	add: function()&#123;</span><br><span class="line">		this.age++;</span><br><span class="line">	&#125;,</span><br><span class="line">	subtract: function()&#123;</span><br><span class="line">		this.age--;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We can also pass different values using the same function.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;button v-on:click=&quot;subtract(1)&quot;&gt;subtract 1 button&lt;/button&gt;</span><br><span class="line">&lt;button v-on:dblclick=&quot;subtract(10)&quot;&gt;subtract 10 button&lt;/button&gt;</span><br><span class="line"></span><br><span class="line">***************************************</span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">	subtract: function(dec)&#123;</span><br><span class="line">		this.age -= dec;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>v-on can be simplified as @.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;canvas&quot; @mousemove=&quot;updateXY&quot;&gt;&#123;&#123;x&#125;&#125;, &#123;&#123;y&#125;&#125;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">***************************************</span><br><span class="line">data: &#123;</span><br><span class="line">	x: 0,</span><br><span class="line">	y: 0</span><br><span class="line">&#125;</span><br><span class="line">methods: &#123;</span><br><span class="line">	updateXY: function(event)&#123;</span><br><span class="line">		this.x = event.offsetX;</span><br><span class="line">		this.y = event.offsetY;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Event-Modifiers"><a href="#Event-Modifiers" class="headerlink" title="Event Modifiers"></a>Event Modifiers</h3><p>.once  .prevent<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;button v-on:click.once=&quot;subtract(1)&quot;&gt;subtract 1 button&lt;/button&gt;</span><br><span class="line">&lt;a v-on:click.prevent=&quot;click&quot; href=&quot;https://www.baidu.com&quot;&gt;Click Me&lt;/a&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Keyboard-Event"><a href="#Keyboard-Event" class="headerlink" title="Keyboard Event"></a>Keyboard Event</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;Name:&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; v-on:keyup.enter=&quot;logName&quot;&gt;</span><br><span class="line">&lt;label&gt;Age:&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; v-on:keyup.alt.enter=&quot;logAge&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>giving a lot of flexibilty for listening the events.</p>
+<h3 id="Two-Way-Binding"><a href="#Two-Way-Binding" class="headerlink" title="Two Way Binding"></a>Two Way Binding</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;label&gt;Name:&lt;/label&gt;</span><br><span class="line">&lt;input type=&quot;text&quot; v-model=&quot;name&quot;&gt;</span><br><span class="line">&lt;span&gt;&#123;&#123; name &#125;&#125;&lt;/span&gt;</span><br><span class="line"></span><br><span class="line">************************************</span><br><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">	name: &apos;&apos;,</span><br><span class="line">	age: &apos;&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Computed-Properties"><a href="#Computed-Properties" class="headerlink" title="Computed Properties"></a>Computed Properties</h3><p>Everytime the value changes whether that’s a or b, both methods will run even some methods don’t need to. The computed property only be updated when one of the values updates.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;vue-app&quot;&gt;</span><br><span class="line">	&lt;h1&gt;Two way binding&lt;/h1&gt;</span><br><span class="line">	&lt;button v-on:click=&quot;a++&quot;&gt;Add to A&lt;/button&gt;</span><br><span class="line">	&lt;button v-on:click=&quot;b++&quot;&gt;Add to B&lt;/button&gt;</span><br><span class="line">	&lt;p&gt;A - &#123;&#123; a &#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;	B - &#123;&#123; b &#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;Age + A = &#123;&#123; addToA() &#125;&#125;&lt;/p&gt;</span><br><span class="line">	&lt;p&gt;Age + B = &#123;&#123; addToB() &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">*************************************</span><br><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">	addToA: function()&#123;</span><br><span class="line">		console.log(&quot;addToA&quot;);</span><br><span class="line">		return this.a + this.age;</span><br><span class="line">	&#125;,</span><br><span class="line">	addToB: function()&#123;</span><br><span class="line">		console.log(&quot;addToB&quot;);</span><br><span class="line">		return this.b + this.age;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Age + A = &#123;&#123; addToA &#125;&#125;&lt;/p&gt;</span><br><span class="line">&lt;p&gt;Age + B = &#123;&#123; addToB &#125;&#125;&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">***************************************</span><br><span class="line"></span><br><span class="line">computed: &#123;</span><br><span class="line">	addToA: ...,</span><br><span class="line">	addToB: ...</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>The computed properties do kind of watch the variables that they need to be computed and calculated, they only run when needed.</p>
+<h3 id="Dynamic-CSS"><a href="#Dynamic-CSS" class="headerlink" title="Dynamic CSS"></a>Dynamic CSS</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;vue-app&quot;&gt;</span><br><span class="line">	&lt;h1&gt;Dynamic CSS&lt;/h1&gt;</span><br><span class="line">	&lt;h2&gt;Example 1&lt;/h2&gt;</span><br><span class="line">	&lt;div v-on:click=&quot;available = !available&quot; v-bind:class=&quot;&#123;available: available&#125;&quot;&gt;	</span><br><span class="line">		&lt;span&gt;Ryu&lt;/span&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">****************************************</span><br><span class="line"></span><br><span class="line">data: &#123;</span><br><span class="line">	available: true</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>We can define an object in the computed properties. Then return the compClasses in the computed properties.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;h2&gt;Example 2&lt;/h2&gt;</span><br><span class="line">&lt;button v-on:click=&quot;available = !available&quot;&gt;Available&lt;/button&gt;</span><br><span class="line">&lt;button v-on:click=&quot;nearby = !nearby&quot;&gt;Nearby&lt;/button&gt;</span><br><span class="line">&lt;div v-bind:class=&quot;compClasses&quot;&gt;	</span><br><span class="line">	&lt;span&gt;Ryu&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">*****************************************</span><br><span class="line">data: &#123;</span><br><span class="line">	available: true,</span><br><span class="line">	nearby: false</span><br><span class="line">&#125;,</span><br><span class="line">computed: &#123;</span><br><span class="line">	compClasses: function()&#123;</span><br><span class="line">		return&#123;</span><br><span class="line">			available: this.available,</span><br><span class="line">			nearby: this.nearby</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/03/CSS-Best-Practices/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1241,253 +1519,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/Windows-users-are-not-happy-629/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoying17">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoying17的路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/17/Windows-users-are-not-happy-629/" itemprop="url">Windows users are not happy #629</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-17T08:09:26+08:00">
-                2018-05-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>在windows环境下用node-gyp作为一个依赖来初始化项目永远是一个痛点。本次利用vue框架，其中用到sqlite3依赖包，一直报错，gyp err… can’t find python等。根据出错提示，明白需要在win10环境下安装python,并设置其环境变量，还需要安装Visual C++的依赖环境。网上众说纷纭，总结教训，及时查看文档，github上有关于安装node-gyp的详细说明。</p>
-<p>参考<a href="https://github.com/nodejs/node-gyp" target="_blank" rel="noopener">https://github.com/nodejs/node-gyp</a>,在windows系统上安装node-gyp有以下两种方法。<br>其一是通过npm自己提供的依赖包来配置系统所需的工具和配置，具体命令为npm install –global –production windows-build-tools,以管理员身份在命令行运行。体会到一点，由于这些依赖包也是与时俱进一直在变化的，不是说这个命令就能完全解决问题，存在版本的更迭和一系列发现issue和完善bug的过程。<br>其二是手动添加依赖环境。第一步，安装visual C++构建环境，笔者选择options1，安装默认的Visual C++ Build Tools(<a href="http://landinghub.visualstudio.com/visual-cpp-build-tools" target="_blank" rel="noopener">http://landinghub.visualstudio.com/visual-cpp-build-tools</a> )。第二步，安装Python2.7版本同时设置系统环境变量。第三步，nom config set msvs_version 2015。另外，如果安装了多个Python版本，需指明一个版本。</p>
-<p>其他收获: Windows系统上Node.js环境配置，以上过程即为设置的过程。而sqlite3包恰好可以用来检验这个环境是否配置正确。此外，还可以安装node-sass等来检验。当然，不需要时，再通过npm uninstall卸载。</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/22/High-Performance-1-loading-and-execution/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoying17">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoying17的路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/04/22/High-Performance-1-loading-and-execution/" itemprop="url">High Performance 1 loading and execution</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-22T15:48:38+08:00">
-                2018-04-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h4 id="Script位置"><a href="#Script位置" class="headerlink" title="Script位置"></a>Script位置</h4><p><script>标签被用来加载外部js文件，一般与link的css文件放在一起，都放在head里。原因在于，首先加载到相应依赖的样式和行为之后，页面才可以显示相应的样式和行为效果。假设<head>标签里有三个<script>，分别要加载 1.js, 2.js, 3.js。早期的浏览器只能按顺序先加载 1.js,执行 1.js,加载 2.js,执行 2.js，加载 3.js,执行 3.js,这样用户就会有比较长的等待时间，白屏时间。现在浏览器虽然script脚本文件的下载会阻碍其他所有类型资源的加载，</p>
-</script></p>
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1533,7 +1569,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
