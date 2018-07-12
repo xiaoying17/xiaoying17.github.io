@@ -236,6 +236,130 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/Vue-serious-21-30/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="xiaoying17">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="xiaoying17的路">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/07/12/Vue-serious-21-30/" itemprop="url">Vue serious 21-30</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-12T21:30:13+08:00">
+                2018-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="Props"><a href="#Props" class="headerlink" title="Props"></a>Props</h3><p>pass down data from parent component to child components<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Ninjas.vue</span><br><span class="line">&lt;script&gt;</span><br><span class="line">export default &#123;</span><br><span class="line">  props: &#123;</span><br><span class="line">  	ninjas: &#123;</span><br><span class="line">  		type: Array</span><br><span class="line">  	&#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">************************************</span><br><span class="line">App.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;app-ninjas v-bind:ninjas=&quot;ninjas&quot;&gt;&lt;/app-ninjas&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Primitives-vs-Reference-Types"><a href="#Primitives-vs-Reference-Types" class="headerlink" title="Primitives vs Reference Types"></a>Primitives vs Reference Types</h3><p>Primitive types are strings booleans and numbers,reference types are objects and arrays. We delete the original source of data when it’s an reference type.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+<h3 id="Event-Bus"><a href="#Event-Bus" class="headerlink" title="Event Bus"></a>Event Bus</h3><p>We create the event bus and import them into both of these components then we can communicate between them without parent.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">main.js</span><br><span class="line">export const bus = new Vue();</span><br><span class="line"></span><br><span class="line">**********************************************</span><br><span class="line">Header.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;h1 v-on:click=&quot;changeTitle&quot;&gt;&#123;&#123; title &#125;&#125;&lt;/h1&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">**********************************************</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	methods: &#123;</span><br><span class="line">		changeTitle: function()&#123;</span><br><span class="line">			this.title = &apos;Vue Wizards&apos;;</span><br><span class="line">			bus.$emit(&apos;titleChanged&apos;, &apos;Vue Wizards&apos;);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">***********************************************</span><br><span class="line">Footer.vue</span><br><span class="line">&lt;script&gt;</span><br><span class="line">	created()&#123;</span><br><span class="line">		bus.$on(&apos;titleChanged&apos;, (data) =&gt; &#123;</span><br><span class="line">			this.title = data;</span><br><span class="line">			&#125;)</span><br><span class="line">	&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Slots"><a href="#Slots" class="headerlink" title="Slots"></a>Slots</h3><p>We can pass HTML down using slots. Then we can only passing data from root component to child component, keeping the same form.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">App.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;form-helper&gt;</span><br><span class="line">			&lt;div slot=&quot;form-header&quot;&gt;</span><br><span class="line">				&lt;h3&gt;This is the title of the form&lt;/h3&gt;</span><br><span class="line">				&lt;p&gt;Information about the form&lt;/p&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div slot=&quot;form-fields&quot;&gt;</span><br><span class="line">				&lt;input type=&quot;text&quot; placeholder=&quot;name&quot; required/&gt;</span><br><span class="line">				&lt;input type=&quot;password&quot; placeholder=&quot;password&quot; required/&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">			&lt;div slot=&quot;form-controls&quot;&gt;</span><br><span class="line">				&lt;button v-on:click=&quot;handleSubmit&quot;&gt;Submit&lt;/button&gt;</span><br><span class="line">			&lt;/div&gt;</span><br><span class="line">		&lt;/form-helper&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">import formHelper from &apos;./components/formHelper.vue&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">	components: &#123;</span><br><span class="line">		&apos;form-helper&apos;: formHelper</span><br><span class="line">	&#125;,</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">************************************************************</span><br><span class="line">formHelper.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;h1 &gt;I am the form helper&lt;/h1&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;slot name=&quot;form-header&quot;&gt;&lt;/slot&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;slot name=&quot;form-fields&quot;&gt;&lt;/slot&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">		&lt;div&gt;</span><br><span class="line">			&lt;slot name=&quot;form-controls&quot;&gt;&lt;/slot&gt;</span><br><span class="line">		&lt;/div&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">  </span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure></p>
+<h3 id="Dynamic-Components"><a href="#Dynamic-Components" class="headerlink" title="Dynamic Components"></a>Dynamic Components</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">App.vue</span><br><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;div&gt;</span><br><span class="line">		&lt;keep-alive&gt;</span><br><span class="line">			&lt;component v-bind:is=&quot;component&quot;&gt;&lt;/component&gt;</span><br><span class="line">		&lt;/keep-alive&gt;</span><br><span class="line">		</span><br><span class="line">		&lt;button v-on:click=&quot;component = &apos;form-One&apos;&quot;&gt;Component 1&lt;/button&gt;</span><br><span class="line">		&lt;button v-on:click=&quot;component=&apos;form-Two&apos;&quot;&gt;Component 2&lt;/button&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">  </span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import formOne from &apos;./components/formOne.vue&apos;</span><br><span class="line">import formTwo from &apos;./components/formTwo.vue&apos;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">	components: &#123;</span><br><span class="line">		&apos;form-One&apos;: formOne,</span><br><span class="line">		&apos;form-Two&apos;: formTwo</span><br><span class="line">	&#125;,</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">*****************************************************</span><br></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/08/vue-series-11-20/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1379,134 +1503,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/23/design-theories-and-principles/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="xiaoying17">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="xiaoying17的路">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/23/design-theories-and-principles/" itemprop="url">design theories and principles</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-23T22:08:52+08:00">
-                2018-05-23
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="three-aspects-to-graphic-design"><a href="#three-aspects-to-graphic-design" class="headerlink" title="three aspects to graphic design"></a>three aspects to graphic design</h3><p>1) layout<br>2) color<br>3) typography</p>
-<h3 id="things-to-keep-in-mind"><a href="#things-to-keep-in-mind" class="headerlink" title="things to keep in mind"></a>things to keep in mind</h3><p>1) konw your audience and the goal of the piece<br>2) a designer must be a great communicator<br>3) order and clarity make information easy to understand<br>4) build intuition through practice</p>
-<h3 id="key-rules-and-concepts-of-design"><a href="#key-rules-and-concepts-of-design" class="headerlink" title="key rules and concepts of design"></a>key rules and concepts of design</h3><p>1 balance : symmetrical  asymmetrical<br>2 proximity : the grouping and shaping of objects on a page<br>3 alignment : keeping objects in-line with one another<br>4 contrast : creating distinction by highlighting differences<br>5 white space : the art of nothing<br>6 keep it simple : avoid an overwhelming amount of colors or objects<br>    always ask yourself: what am I representing? how am I representing it?<br>    winnow away superfluous information and details</p>
-<h3 id="digital-workflows"><a href="#digital-workflows" class="headerlink" title="digital workflows"></a>digital workflows</h3><p>software suites<br>1 Adobe Creative Suite is the industry standard for design<br>2 Microsoft Powerpoint can be used for simple presentation and print layouts</p>
-<p>adobe indesign/ Adobe illustrator/ photoshop / powerpoint</p>
-<h3 id="color-handing"><a href="#color-handing" class="headerlink" title="color handing"></a>color handing</h3><p>CMYK is generally used for print, RGB is for on-screen media</p>
-<h3 id="types-of-digital-artwork"><a href="#types-of-digital-artwork" class="headerlink" title="types of digital artwork"></a>types of digital artwork</h3><p>1 vector<br>1)image consisting of points and paths that have a proportional relationship<br>2)infinitely scalable<br>3)primarily used in illustrator<br>2 raster(PNG)<br>1) flattened image consisting of many pixels<br>2) not scalable<br>3) primary used in photoshop, any print program</p>
-<h3 id="image-resolution"><a href="#image-resolution" class="headerlink" title="image resolution"></a>image resolution</h3><p>270 dpi for print, 72 dpi for screen<br>the possible size of the final image will be dictated by the number of pixels in the image</p>
-<h3 id="color-formula"><a href="#color-formula" class="headerlink" title="color formula"></a>color formula</h3><p>1 Monochromatic use hue and saturation<br>2 Analogous use color next to it on the wheel<br>3 Complementory  add some variety by introducing lighter, darker, desaturated tones<br>4 splite complementory use the colors on eaxh side of the complement<br>5 Triatic pretty striking especially with primary or secondary colors<br>6 Tetratic forms a rectangle on the wheel, using two complementory schemes, let one color dominate and the others serve as an accent</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1557,7 +1553,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">31</span>
+                  <span class="site-state-item-count">32</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
